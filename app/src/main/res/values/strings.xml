@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="weight_frst">Розмір першої порції</string>
+    <string name="weight_scnd">Розмір другої порції</string>
+    <string name="weight_thrd">Розмір третьої порції</string>
+    <string name="portions">Кількість порцій</string>
+    <string name="btn_text">Задати</string>
+</resources>
