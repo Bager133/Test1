@@ -3,13 +3,12 @@ package com.example.test
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
+import android.widget.GridView
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class table: AppCompatActivity() {
-    lateinit var grd : TextView
+    lateinit var grd : GridView
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +27,6 @@ class table: AppCompatActivity() {
 
         val somStr = intent.getStringExtra("XZ") //?: "I don`t know why NULL!!!"
         grd = findViewById(R.id.someText)
-        grd.setText(somStr)
+        grd.numColumns = somStr.toInt()
     }
 }

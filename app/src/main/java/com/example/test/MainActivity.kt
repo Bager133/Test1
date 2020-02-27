@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +28,9 @@ class MainActivity : AppCompatActivity() {
         edtxt4 = findViewById(R.id.edt4)
         btn1 = findViewById(R.id.btn1)
         btn1.setOnClickListener {
-
+          if (TextUtils.isEmpty(edtxt1.text.toString()) or TextUtils.isEmpty(edtxt2.text.toString()) or TextUtils.isEmpty(edtxt3.text.toString()) or TextUtils.isEmpty(edtxt4.text.toString()))
+             Toast.makeText(this@MainActivity, "Заповніть всі дані", Toast.LENGTH_SHORT).show();
+          else
             calculateTip()
         }
     }
@@ -34,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         val d = edtxt1.text.toString()
         val intent = Intent(this@MainActivity, table::class.java)
         intent.putExtra("XZ", d)
+
         startActivity(intent)
     }
 }
