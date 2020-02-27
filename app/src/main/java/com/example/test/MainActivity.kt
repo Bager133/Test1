@@ -31,11 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun calculateTip(){
-        val a = edtxt2.text.toString().toDouble()
-        val b = edtxt3.text.toString().toDouble()
-        val c = edtxt4.text.toString().toDouble()
         val d = edtxt1.text.toString()
-        val res = a+b+c
         val intent = Intent(this@MainActivity, table::class.java)
         intent.putExtra("XZ", d)
         startActivity(intent)

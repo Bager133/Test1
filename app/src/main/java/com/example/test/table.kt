@@ -14,14 +14,20 @@ class table: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.table)
+        parseText()
         val intent = Intent(this@table,MainActivity::class.java)
-        val somStr = intent.getStringExtra("ZX")
         val btn2 = findViewById<ImageButton>(R.id.btn2) as ImageButton
-        grd = findViewById(R.id.grdv)
-        grd.setText(somStr)
+
         btn2.setOnClickListener {
             startActivity(intent)
         }
 
+    }
+
+    fun parseText(){
+
+        val somStr = intent.getStringExtra("XZ") //?: "I don`t know why NULL!!!"
+        grd = findViewById(R.id.someText)
+        grd.setText(somStr)
     }
 }
